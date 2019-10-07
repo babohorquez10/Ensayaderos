@@ -11,14 +11,14 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
 
-    fetch("/data")
-    .then(res => res.json())
-    .then(ensayaderos => 
-      this.setState({
-        ensayaderos : ensayaderos
-      }));
+    const prom1 = await fetch("/data");
+    const prom2 = await prom1.json();
+
+    this.setState({
+      ensayaderos : prom2
+    });
     
   }
 
