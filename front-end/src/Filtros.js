@@ -25,20 +25,26 @@ class Filtros extends React.Component {
 
   render() {
     return (
-      <form>
+      <form className="filtros">
         <div className="row">
           <input className="col-12" type="text" placeholder="Nombre..." 
           value={this.props.buscado} onChange={this.handleTextChange} />
         </div>
         <div className="row">
-          Filtrar
-          <input className="filtro" type="checkbox" checked={this.props.filtrarPrecio} 
-          onChange={this.handleFilterCheckBox} />
-
-          <input className="slider" type="range" min="5000" max="50000" step="1000" value={this.props.precioMaximo}
-          onChange={this.handleSliderChange} />
-          <span>${this.props.precioMaximo}</span>
+          <div className="custom-control custom-checkbox">
+            <input type="checkbox" className="custom-control-input" id="customCheck1" 
+            checked={this.props.filtrarPrecio} onChange={this.handleFilterCheckBox} />
+            <label className="custom-control-label" htmlFor="customCheck1">Filtrar</label>
+          </div>
         </div>
+        <div className="row">
+          <label className="slider"> Precio Máximo: ${this.props.precioMaximo / 1000}.000
+          <input className="custom-range" type="range" min="5000" max="50000" step="1000" value={this.props.precioMaximo}
+          onChange={this.handleSliderChange} disabled={!this.props.filtrarPrecio}/>
+          </label>
+          
+        </div>
+        
       </form>
     );
   }

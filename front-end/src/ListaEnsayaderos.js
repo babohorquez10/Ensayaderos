@@ -22,7 +22,7 @@ class ListaEnsayaderos extends React.Component {
 
     return (
       <div className="listaEnsayaderos">
-        {ensayaderos}
+        {ensayaderos.length !== 0 ? ensayaderos : "No se encontraron resultados..."}
       </div>
     );
   }

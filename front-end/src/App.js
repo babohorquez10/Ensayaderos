@@ -12,7 +12,7 @@ class App extends React.Component {
       ensayaderos: [],
       buscado: "",
       filtrarPrecio: false,
-      precioMaximo: 30000
+      precioMaximo: 28000
     };
 
     this.handleTextChange = this.handleTextChange.bind(this);
@@ -40,12 +40,19 @@ class App extends React.Component {
 
   async componentDidMount() {
 
-    const prom1 = await fetch("/data");
-    const prom2 = await prom1.json();
+    try {
+      
+      const prom = await fetch("/data");
+      const jsonData = await prom.json();
 
-    this.setState({
-      ensayaderos : prom2
-    });
+      this.setState({
+        ensayaderos : jsonData
+      });
+
+    } catch(e) {
+      console.log("Error al cargar los datos");
+    }
+    
   }
 
   render () {

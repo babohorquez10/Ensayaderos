@@ -4,6 +4,9 @@ import "./Ensayadero.css";
 class Ensayadero extends React.Component {
 
   render() {
+
+
+
     return (
       <div className="ensayadero card border-dark">
         <div className="card-header">
@@ -12,6 +15,7 @@ class Ensayadero extends React.Component {
         <div className="card-body">
           <div>Precio: ${this.props.ensayadero.precio}</div>
           <div>Dirección: {this.props.ensayadero.direccion}</div>
+          <div>Tel: {this.props.ensayadero.tel}</div>
         </div>
 
       </div>

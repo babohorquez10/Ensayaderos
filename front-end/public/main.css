@@ -3,8 +3,7 @@
 }
 
 #map {
-  width: 100%; 
-  height: 80vh;
+  width: 100%;
 }
 
 .marker {
@@ -14,4 +13,13 @@
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+#map, .buscador {
+  height: 80vh;
+}
+
+.listaEnsayaderos {
+  height: 80%;
+  overflow-y: scroll;
 }

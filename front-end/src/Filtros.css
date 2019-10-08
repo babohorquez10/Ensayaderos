@@ -1,8 +1,7 @@
-.slider {
-  margin: 0 4%;
+.filtros .row {
+  margin-bottom: 0;
 }
 
-.filtro {
-  margin: 0 4%;
-  align-self: center;
+.slider {
+  width: 100%
 }
