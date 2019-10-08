@@ -27,11 +27,11 @@ class App extends React.Component {
       <div className="row">
         <div className="col-8">
           <h1>Mapa</h1>
-          <Mapa />
+          <Mapa ensayaderos={this.state.ensayaderos} />
         </div>
         <div className="col-4">
           <h1>Buscar</h1>
-          <Buscador ensayaderos={this.state.ensayaderos}/>
+          <Buscador ensayaderos={this.state.ensayaderos} />
         </div>
       </div>
     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import Ensayadero from "./Ensayadero.js"
+import Ensayadero from "./Ensayadero.js";
 
 class ListaEnsayaderos extends React.Component {
 
