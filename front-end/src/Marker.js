@@ -9,7 +9,6 @@ class Marker extends React.Component {
   }
 
   render() {
-    
     return (<div ref={this.myRef} className="marker"></div>);
   }
 

@@ -8,8 +8,33 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      ensayaderos: []
+      ensayaderos: [],
+      buscado: "",
+      filtrarPrecio: false,
+      precioMaximo: 30000
     };
+
+    this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleSliderChange = this.handleSliderChange.bind(this);
+    this.handleFilterCheckBox = this.handleFilterCheckBox.bind(this);
+  }
+
+  handleTextChange (buscado) {
+    this.setState({
+      buscado: buscado
+    });
+  }
+
+  handleSliderChange (precioMax) {
+    this.setState({
+      precioMaximo: precioMax
+    });
+  }
+
+  handleFilterCheckBox (filtrar) {
+    this.setState({
+      filtrarPrecio: filtrar
+    });
   }
 
   async componentDidMount() {
@@ -27,11 +52,24 @@ class App extends React.Component {
       <div className="row">
         <div className="col-8">
           <h1>Mapa</h1>
-          <Mapa ensayaderos={this.state.ensayaderos} />
+          <Mapa 
+          ensayaderos={this.state.ensayaderos} 
+          buscado={this.state.buscado} 
+          filtrarPrecio={this.state.filtrarPrecio}
+          precioMaximo={this.state.precioMaximo}
+          />
         </div>
         <div className="col-4">
           <h1>Buscar</h1>
-          <Buscador ensayaderos={this.state.ensayaderos} />
+          <Buscador 
+          ensayaderos={this.state.ensayaderos} 
+          buscado={this.state.buscado} 
+          filtrarPrecio={this.state.filtrarPrecio}
+          precioMaximo={this.state.precioMaximo}
+          onTextChange={this.handleTextChange}
+          onFilterCheckBox={this.handleFilterCheckBox}
+          onSliderChange={this.handleSliderChange} 
+          />
         </div>
       </div>
     );

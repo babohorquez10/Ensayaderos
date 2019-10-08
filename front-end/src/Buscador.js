@@ -4,54 +4,22 @@ import ListaEnsayaderos from "./ListaEnsayaderos.js";
 
 class Buscador extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      buscado: "",
-      filtrarPrecio: false,
-      precioMaximo: 30000
-    }
-
-    this.handleTextChange = this.handleTextChange.bind(this);
-    this.handleSliderChange = this.handleSliderChange.bind(this);
-    this.handleFilterCheckBox = this.handleFilterCheckBox.bind(this);
-  }
-
-  handleTextChange (buscado) {
-    this.setState({
-      buscado: buscado
-    });
-  }
-
-  handleSliderChange (precioMax) {
-    this.setState({
-      precioMaximo: precioMax
-    });
-  }
-
-  handleFilterCheckBox (filtrar) {
-    this.setState({
-      filtrarPrecio: filtrar
-    });
-  }
-
   render() {
 
     return (
       <div className="buscador col-12">
-        <Filtros buscado={this.state.buscado} 
-        filtrarPrecio={this.state.filtrarPrecio}
-        precioMaximo={this.state.precioMaximo}
-        onTextChange={this.handleTextChange}
-        onFilterCheckBox={this.handleFilterCheckBox}
-        onSliderChange={this.handleSliderChange} 
+        <Filtros buscado={this.props.buscado} 
+        filtrarPrecio={this.props.filtrarPrecio}
+        precioMaximo={this.props.precioMaximo}
+        onTextChange={this.props.onTextChange}
+        onFilterCheckBox={this.props.onFilterCheckBox}
+        onSliderChange={this.props.onSliderChange} 
         />
 
         <ListaEnsayaderos ensayaderos={this.props.ensayaderos} 
-        buscado={this.state.buscado} 
-        filtrarPrecio={this.state.filtrarPrecio} 
-        precioMaximo={this.state.precioMaximo}
+        buscado={this.props.buscado} 
+        filtrarPrecio={this.props.filtrarPrecio} 
+        precioMaximo={this.props.precioMaximo}
         />
       </div>
     );
