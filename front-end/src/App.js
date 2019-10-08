@@ -1,5 +1,6 @@
 import React from 'react';
-import Buscador from "./Buscador.js"
+import Buscador from "./Buscador.js";
+import Mapa from "./Mapa.js";
 
 class App extends React.Component {
 
@@ -19,18 +20,21 @@ class App extends React.Component {
     this.setState({
       ensayaderos : prom2
     });
-    
   }
 
-
   render () {
-
     return (
-      <div>
-      <h1>Buscar</h1>
-      <Buscador ensayaderos={this.state.ensayaderos}/>
+      <div className="row">
+        <div className="col-8">
+          <h1>Mapa</h1>
+          <Mapa />
+        </div>
+        <div className="col-4">
+          <h1>Buscar</h1>
+          <Buscador ensayaderos={this.state.ensayaderos}/>
+        </div>
       </div>
-      );
+    );
   }
 }
 

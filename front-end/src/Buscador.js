@@ -39,22 +39,20 @@ class Buscador extends React.Component {
   render() {
 
     return (
-      <div className="row">
-        <div className="buscador col-4">
-          <Filtros buscado={this.state.buscado} 
-          filtrarPrecio={this.state.filtrarPrecio}
-          precioMaximo={this.state.precioMaximo}
-          onTextChange={this.handleTextChange}
-          onFilterCheckBox={this.handleFilterCheckBox}
-          onSliderChange={this.handleSliderChange} 
-          />
+      <div className="buscador col-12">
+        <Filtros buscado={this.state.buscado} 
+        filtrarPrecio={this.state.filtrarPrecio}
+        precioMaximo={this.state.precioMaximo}
+        onTextChange={this.handleTextChange}
+        onFilterCheckBox={this.handleFilterCheckBox}
+        onSliderChange={this.handleSliderChange} 
+        />
 
-          <ListaEnsayaderos ensayaderos={this.props.ensayaderos} 
-          buscado={this.state.buscado} 
-          filtrarPrecio={this.state.filtrarPrecio} 
-          precioMaximo={this.state.precioMaximo}
-          />
-        </div>
+        <ListaEnsayaderos ensayaderos={this.props.ensayaderos} 
+        buscado={this.state.buscado} 
+        filtrarPrecio={this.state.filtrarPrecio} 
+        precioMaximo={this.state.precioMaximo}
+        />
       </div>
     );
   }
